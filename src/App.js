@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Toast from "./components/Toast";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 function App() {
@@ -37,12 +37,12 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route
             path="/"
             element={
-              <>
+              <> */}
                 <Navbar
                   navTitle={"TextUtil ~Shubham"}
                   aboutText={"About Us"}
@@ -57,31 +57,31 @@ function App() {
                 <Footer mode={mode} />
                 <Toast triggerToast={toast} />
               </>
-            }
-          />
+      //       }
+      //     />
 
-          <Route
-            path="/about"
-            element={
-              <>
-                <Navbar
-                  navTitle={"TextUtil ~Shubham"}
-                  aboutText={"About"}
-                  mode={mode}
-                  toggleMode={toggleMode}
-                />
-                <About />
-                <Footer mode={mode} />
-                <Toast triggerToast={toast} />
-              </>
-            }
-          />
+      //     <Route
+      //       path="/about"
+      //       element={
+      //         <>
+      //           <Navbar
+      //             navTitle={"TextUtil ~Shubham"}
+      //             aboutText={"About"}
+      //             mode={mode}
+      //             toggleMode={toggleMode}
+      //           />
+      //           <About />
+      //           <Footer mode={mode} />
+      //           <Toast triggerToast={toast} />
+      //         </>
+      //       }
+      //     />
 
-          {/* <div className="container py-3 ">
-          </div> */}
-        </Routes>
-      </Router>
-    </>
+      //     {/* <div className="container py-3 ">
+      //     </div> */}
+      //   </Routes>
+      // </Router>
+    // </>
   );
 }
 
