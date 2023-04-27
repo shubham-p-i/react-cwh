@@ -13,17 +13,35 @@ function App() {
   const [mode, setMode] = useState("light");
   const [toast, setToast] = useState({ msg: "", variant: "" });
 
-  const toggleMode = () => {
+  const removeBgClass=()=>{
+    document.body.classList.remove("bg-danger");
+    document.body.classList.remove("bg-success");
+    document.body.classList.remove("bg-warning");
+    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-dark");
+    document.body.classList.remove("bg-primary");
+  }
+
+  const toggleMode = (clr) => {
+
+    removeBgClass();
+
+    if(clr){
+      document.body.classList.add("bg-"+clr);
+    }
+
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#202950";
       setToast({ msg: "Dark mode enabled !", variant: "success" });
+
       setInterval(() => {
         document.title = "TextUtils - Home";
       }, 1250);
       setInterval(() => {
         document.title = "TextUtils - Shubham";
       }, 1000);
+
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
@@ -55,7 +73,7 @@ function App() {
                   showToast={showToast}
                 />
                 <Footer mode={mode} />
-                <Toast triggerToast={toast} />
+                {/* <Toast triggerToast={toast} /> */}
               </>
             }
           />
@@ -72,7 +90,7 @@ function App() {
                 />
                 <About />
                 <Footer mode={mode} />
-                <Toast triggerToast={toast} />
+                {/* <Toast triggerToast={toast} /> */}
               </>
             }
           />
